@@ -1,13 +1,5 @@
-# Phaser Experiment
-
-An experimental project using the [Phaser](https://phaser.io/) JavaScript game library.
-
-## Project features
-
-- Parcel for build and development server
-- Prettier
-- ESLint with basic config
-- Husky/lint-staged for running Prettier and ESLint on staged files in pre-commit hook
+# Infinite Jumper Phaser Tutorial
+The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phaser 3 With Modern JavaScript'](https://ourcade.co/books/infinite-jumper-phaser3) book.
 
 ## Scripts
 
