@@ -25,4 +25,17 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 - Mini-mob on weekend of 17/18 June
 - Keep pitching game ideas
 
-## Mob two: 21 June 2023
+## Mob two: 18 June 2023
+
+- Externalising game global parameters.
+- Cool libraray and tools! Very easy to get set up.
+- Keep pitching game ideas.
+- 5 minute mobbing working very well.
+- Gather is great!
+
+### Next
+
+- Next mob: Tuesday 20th June
+- RPG for mobbing? Gregoreigler?
+
+## Mob three: 20th June 2023 7pm
