@@ -39,3 +39,14 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 - RPG for mobbing? Gregoreigler?
 
 ## Mob three: 20th June 2023 7pm
+
+- First bit of debugging
+- Being too strict on the "rules" can get in the way
+- Five minutes felt too short
+- For an idea to go from a person's head into the computer it must go through someone else's hands!
+- Debugging is a real learning opportunity. The distance between what happened and what we expected to happen is a "learning space" 🙂
+- The "magical" `get` method on a Group is confusing
+
+## Mob three and a half: 25th 11am?
+
+## Mob four: 27th June 2023 7pm
