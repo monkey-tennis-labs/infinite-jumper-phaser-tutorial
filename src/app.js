@@ -12,6 +12,8 @@ class Game extends Phaser.Scene {
   cursors;
   /** @type {Phaser.Physics.Arcade.Group} */
   carrots;
+  carrotsCollected = 0;
+  carrotCollectedText;
 
   preload() {
     this.load.image("background", bg_layer1);
@@ -22,6 +24,7 @@ class Game extends Phaser.Scene {
   }
 
   create() {
+    const style = { color: "#000", fontSize: 24 };
     this.add.image(240, 320, "background").setScrollFactor(1, 0);
     this.platforms = this.physics.add.staticGroup();
     for (let i = 0; i < 5; ++i) {
@@ -61,9 +64,18 @@ class Game extends Phaser.Scene {
       undefined,
       this
     );
+    this.carrotCollectedText = this.add
+      .text(240, 10, "Carrots: 0", style)
+      .setScrollFactor(0)
+      .setOrigin(0.5, 0);
   }
 
   update() {
+    const bottomMostPlatform = this.findBottomMostPlatform();
+    if (this.player.y > bottomMostPlatform) {
+      this.endGame();
+    }
+
     this.platforms.children.iterate((child) => {
       /** @type {Phaser.Physics.Arcade.Sprite} */
       const platform = child;
@@ -73,6 +85,17 @@ class Game extends Phaser.Scene {
         platform.y = scrollY - Phaser.Math.Between(50, 100);
         platform.body.updateFromGameObject();
         this.addCarrotAbove(platform);
+      }
+    });
+
+    this.carrots.children.iterate((child) => {
+      const carrot = child;
+      const scrollY = this.cameras.main.scrollY;
+      if (carrot.y > scrollY + 700) {
+        this.carrots.killAndHide(carrot);
+        this.physics.world.disableBody(carrot.body);
+        console.log(carrot.name);
+        console.log(this.carrots.getChildren().length);
       }
     });
 
@@ -117,14 +140,36 @@ class Game extends Phaser.Scene {
     carrot.setActive(true);
     carrot.setVisible(true);
     this.add.existing(carrot);
+    this.physics.world.enable(carrot);
     carrot.body.setSize(carrot.width, carrot.height);
-
     return carrot;
   }
 
   handleCollectCarrot(player, carrot) {
     this.carrots.killAndHide(carrot);
     this.physics.world.disableBody(carrot.body);
+    this.carrotsCollected++;
+    const value = `Carrots: ${this.carrotsCollected}`;
+    this.carrotCollectedText.text = value;
+  }
+
+  findBottomMostPlatform() {
+    let highestYValue = Number.MIN_VALUE;
+    this.platforms.children.iterate((platform) => {
+      if (platform.y > highestYValue) {
+        highestYValue = platform.y;
+      }
+    });
+    return highestYValue;
+  }
+
+  endGame() {
+    this.cameras.main.stopFollow(this.player);
+    const style = { color: "#000", fontSize: 24 };
+    this.add
+      .text(240, 320, "Game Over", style)
+      .setScrollFactor(0)
+      .setOrigin(0.5, 0);
   }
 }
 

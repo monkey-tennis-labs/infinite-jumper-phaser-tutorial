@@ -47,6 +47,11 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 - Debugging is a real learning opportunity. The distance between what happened and what we expected to happen is a "learning space" 🙂
 - The "magical" `get` method on a Group is confusing
 
-## Mob three and a half: 25th 11am?
+## Mob three and a half: 25th 12:30pm
+
+- Bit more autonomous working today (as opposed to just following the tutorial).
+- More relaxed approached to the mob timer - it's all about the 'flow'!
+- VS Code has an outline feature 🙂!
+- Proposal for following guide in next session (Game Scene deep-dive).
 
 ## Mob four: 27th June 2023 7pm
