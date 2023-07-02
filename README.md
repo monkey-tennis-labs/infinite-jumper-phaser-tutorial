@@ -17,7 +17,7 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 
 - Mob works well with Gather's rapid screen switching
 - Gather works well in general: nice new office with lots of green space and a cat
-- Phaser is intuitive; Infinte Jumper tutorial is easy to follow
+- Phaser is intuitive; Infinite Jumper tutorial is easy to follow
 
 ### Next
 
@@ -28,7 +28,7 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 ## Mob two: 18 June 2023
 
 - Externalising game global parameters.
-- Cool libraray and tools! Very easy to get set up.
+- Cool library and tools! Very easy to get set up.
 - Keep pitching game ideas.
 - 5 minute mobbing working very well.
 - Gather is great!
@@ -50,8 +50,14 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 ## Mob three and a half: 25th 12:30pm
 
 - Bit more autonomous working today (as opposed to just following the tutorial).
-- More relaxed approached to the mob timer - it's all about the 'flow'!
+- More relaxed approach to the mob timer - it's all about the 'flow'!
 - VS Code has an outline feature 🙂!
 - Proposal for following guide in next session (Game Scene deep-dive).
 
 ## Mob four: 27th June 2023 7pm
+
+- Andrzej and Pete practised TDD and "ping-pong" pairing in the cyber-dojo instead!
+- We tried FizzBuzz in Ruby, using RSpec
+- We completed a fizzbuzz() function but didn't quite manage to test drive a "1 to 100 printer"
+
+## Mob four redux: 5th July 7pm
