@@ -61,4 +61,4 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 - We completed a fizzbuzz() function but didn't quite manage to test drive a "1 to 100 printer"
 - The URL for the session: https://cyber-dojo.org/kata/edit/bycm8s
 
-## Mob four redux: 5th July 7pm
+## Mob four redux: ~~5th~~ 6th July 7pm
