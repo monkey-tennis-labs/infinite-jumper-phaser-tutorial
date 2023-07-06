@@ -62,3 +62,9 @@ The MTL Geniuses™️ follow along with Tommy Leung's ['Infinite Jumper In Phas
 - The URL for the session: https://cyber-dojo.org/kata/edit/bycm8s
 
 ## Mob four redux: ~~5th~~ 6th July 7pm
+
+- General feel that we can move on to the Typescript tutorial then THE game!
+- Try bumping mob time to 10 minutes and see how it works.
+- Impressive Phaser3 handling of assets and animations.
+
+## Mob five: 9th July 10th 7:30'ish...

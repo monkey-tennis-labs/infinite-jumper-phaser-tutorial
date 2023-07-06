@@ -4,6 +4,9 @@ import groundGrass from "../assets/ground_grass.png";
 import bunnyStand from "../assets/bunny1_stand.png";
 import carrot from "../assets/carrot.png";
 import Carrot from "./Carrot";
+import bunnyJump from "../assets/bunny1_jump.png";
+import jump from "../assets/sfx/phaseJump1.mp3";
+import GameOver from "./scenes/GameOver";
 
 class Game extends Phaser.Scene {
   /** @type {Phaser.Physics.Arcade.StaticGroup} */
@@ -15,11 +18,21 @@ class Game extends Phaser.Scene {
   carrotsCollected = 0;
   carrotCollectedText;
 
+  constructor() {
+    super("game");
+  }
+
+  init() {
+    this.carrotsCollected = 0;
+  }
+
   preload() {
     this.load.image("background", bg_layer1);
     this.load.image("platform", groundGrass);
     this.load.image("bunny-stand", bunnyStand);
     this.load.image("carrot", carrot);
+    this.load.image("bunny-jump", bunnyJump);
+    this.load.audio("jump", jump);
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
@@ -94,8 +107,6 @@ class Game extends Phaser.Scene {
       if (carrot.y > scrollY + 700) {
         this.carrots.killAndHide(carrot);
         this.physics.world.disableBody(carrot.body);
-        console.log(carrot.name);
-        console.log(this.carrots.getChildren().length);
       }
     });
 
@@ -103,6 +114,15 @@ class Game extends Phaser.Scene {
 
     if (touchingDown) {
       this.player.setVelocityY(-300);
+      this.player.setTexture("bunny-jump");
+      this.sound.play("jump");
+    }
+
+    if (
+      this.player.body.velocity.y > 0 &&
+      this.player.texture.key !== "bunny-stand"
+    ) {
+      this.player.setTexture("bunny-stand");
     }
 
     if (this.cursors.left.isDown && !touchingDown) {
@@ -164,12 +184,7 @@ class Game extends Phaser.Scene {
   }
 
   endGame() {
-    this.cameras.main.stopFollow(this.player);
-    const style = { color: "#000", fontSize: 24 };
-    this.add
-      .text(240, 320, "Game Over", style)
-      .setScrollFactor(0)
-      .setOrigin(0.5, 0);
+    this.scene.start("game-over");
   }
 }
 
@@ -177,14 +192,14 @@ export default new Phaser.Game({
   type: Phaser.AUTO,
   width: 480,
   height: 640,
-  scene: Game,
+  scene: [Game, GameOver],
   physics: {
     default: "arcade",
     arcade: {
       gravity: {
         y: 200,
       },
-      debug: true,
+      debug: false,
     },
   },
 });
